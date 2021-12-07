@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+
+    {% if update is defined %}
+        {% form_theme formUpdate 'bootstrap_5_layout.html.twig' %}
+
+        {{ form_start(formUpdate) }}
+        {{ form_widget(formUpdate) }}
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle mb-3" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item" type="button">Action</button>
+                <button class="dropdown-item" type="button">Another action</button>
+                <button class="dropdown-item" type="button">Something else here</button>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+        {{ form_end(formUpdate) }}
+
+    {% else %}
+
+        {% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle mb-3" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item" type="button">Action</button>
+                <button class="dropdown-item" type="button">Another action</button>
+                <button class="dropdown-item" type="button">Something else here</button>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+        {{ form_end(form) }}
+
+    {% endif %}
+
+{# if else for edit and delete 02.14.51 #}
+
+{% endblock %}
