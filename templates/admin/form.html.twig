@@ -9,16 +9,6 @@
 
         {{ form_start(formUpdate) }}
         {{ form_widget(formUpdate) }}
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle mb-3" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <button class="dropdown-item" type="button">Action</button>
-                <button class="dropdown-item" type="button">Another action</button>
-                <button class="dropdown-item" type="button">Something else here</button>
-            </div>
-        </div>
         <button type="submit" class="btn btn-primary">Enregistrer</button>
         {{ form_end(formUpdate) }}
 
@@ -28,16 +18,16 @@
 
         {{ form_start(form) }}
         {{ form_widget(form) }}
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle mb-3" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <button class="dropdown-item" type="button">Action</button>
-                <button class="dropdown-item" type="button">Another action</button>
-                <button class="dropdown-item" type="button">Something else here</button>
-            </div>
-        </div>
+{#        <div class="dropdown">#}
+{#            <button class="btn btn-secondary dropdown-toggle mb-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">#}
+{#                Choisissez le genre#}
+{#            </button>#}
+{#            {% for categories in categorie %}#}
+{#            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">#}
+{#                <li><a class="dropdown-item" href="#">{{ categorie.categories_id  }}</a></li>#}
+{#            </ul>#}
+{#            {% endfor %}#}
+{#        </div>#}
         <button type="submit" class="btn btn-primary">Enregistrer</button>
         {{ form_end(form) }}
 

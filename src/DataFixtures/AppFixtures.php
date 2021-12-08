@@ -12,46 +12,34 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         $serie1 = new Series();
-        $serie1->setNom('Dragons les gardiens du ciel')
-            ->setSynopsis('Dragons: Les Gardiens du Ciel est une série télévisée américaine animée par ordinateur dans la franchise Dragons produite par DreamWorks Animation Television pour Netflix.')
-            ->setPoster('img/dragons.jpg');
+        $category1 = new Categories();
+
+        $serie1->setNom('Harry Potter')
+            ->setSynopsis('孤児の少年ハリー・ポッターのもとに、ホグワーツ魔法魔術学校への入学を許可する手紙が舞い込む。彼の両親は有名な魔法使いで、彼もその血を受け継いでいたことが判明。ハリーは無事入学し友達もできるが、やがて学校に隠された驚くべき秘密に気づく。')
+            ->setPoster('harrypotter.jpg');
             //->setGenre('Animation');
+
+        $category1->setNom('Adventure');
+        $serie1->setCategories($category1);
+
         $manager->persist($serie1);
+        $manager->persist($category1);
 
         $serie2 = new Series();
-        $serie2->setNom('the Walking Dead')
-            ->setSynopsis("Une épidémie a transformé presque tous les êtres humains en zombies. Rick Grimes, un shérif-adjoint, prend la tête d\'un groupe d\'hommes et de femmes qui tentent de survivre tant bien que mal dans ce nouvel univers hostile")
-            ->setPoster('img/walking_dead.jpg');
-            //->setGenre('Fiction');
+        $category2 = new Categories();
+
+        $serie2->setNom('Demon Slayer')
+            ->setSynopsis("家族を鬼に殺され、唯一生き残った妹も鬼に変えられてしまった少年・竈門炭治郎が、妹を人間に戻すため鬼殺隊に入隊して壮絶な戦いを繰り広げる。蝶屋敷での訓練で全集中・常中を会得した炭治郎たちは、新たな指令を受けて「無限列車」に乗り込む。その列車では短期間のうちに40人以上の行方不明者が出ており、送り込まれた剣士たちも全員消息を絶っていた。炭治郎たち一行は、鬼殺隊最高位の剣士柱のひとりである炎柱の煉獄杏寿郎と共に、列車に潜む鬼と対峙する。")
+            ->setPoster('kimetsu.jpg');
+            //->setGenre('Animation');
+
+        $category2->setNom('Animation');
+        $serie2->setCategories($category2);
+
         $manager->persist($serie2);
-
-        $serie3 = new Series();
-        $serie3->setNom('Casa del Papel')
-            ->setSynopsis('La casa de papel, ou La Maison de papier au Québec, est une série télévisée espagnole créée par Álex Pina et diffusée entre le 2 mai 2017 et le 23 novembre 2017 sur la chaîne Antena 3 en Espagne.')
-            ->setPoster('img/casa.jpg');
-            //->setGenre('Thriller');
-        $manager->persist($serie3);
+        $manager->persist($category2);
 
         $manager->flush();
-        $this->loadCategories($manager);
-    }
 
-    //THIS IS WHAT I WRITE ON 7/12 !!!!!!
-    public function loadCategories(ObjectManager $manager): void{
-
-        $categorie1 = new Categories();
-        $categorie1->setNom('Thriller');
-        $manager->persist($categorie1);
-        $manager->flush();
-
-        $categorie2 = new Categories();
-        $categorie2->setNom('Animation');
-        $manager->persist($categorie2);
-        $manager->flush();
-
-        $categorie3 = new Categories();
-        $categorie3->setNom('Fiction');
-        $manager->persist($categorie3);
-        $manager->flush();
     }
 }

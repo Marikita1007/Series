@@ -5,8 +5,10 @@ namespace App\Controller;
 use App\Entity\Categories;
 use App\Entity\Series;
 use App\Form\SerieType;
+use App\Repository\CategoriesRepository;
 use App\Repository\SeriesRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bridge\Doctrine\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -32,7 +34,6 @@ class AdminController extends AbstractController
     public function addSerie(EntityManagerInterface $manager, Request $request): Response
     {
         $serie = new Series();
-        $categorie = new Categories();
         $form = $this->createForm(SerieType::class, $serie);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()){
@@ -44,8 +45,10 @@ class AdminController extends AbstractController
         }
         return $this->render('admin/form.html.twig', [
             'form' => $form->createView(),
+            //'categories' => $categories,
         ]);
     }
+
 
     /**
      * @Route("/admin/update/{id}", name="admin_update")

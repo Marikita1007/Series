@@ -2,9 +2,12 @@
 
 namespace App\Form;
 
+use App\Entity\Categories;
 use App\Entity\Series;
 
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
@@ -20,6 +23,10 @@ class SerieType extends AbstractType
             ->add('imageFile', FileType::class, array('data_class' => null, 'required'=>false))
             //->add('genre')
             ->add('synopsis')
+            // I ADDED !!!!!!
+            ->add('categories', EntityType::class, array(
+                'class' => Categories::class,
+            ))
         ;
     }
 

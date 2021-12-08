@@ -10,8 +10,9 @@
         <div class="card text-center" style="width: 18rem;">
             <img src="{{ asset('img/'~serie.poster) }}"  class="card-img-top" alt="{{ serie.nom }}">
             <div class="card-body">
-                <h5 class="card-title">{{ serie.nom }}</h5>
-                <p class="card-text">{# serie.genre #}</p>
+                <h5 class="card-title">{{ serie.nom }}
+                    {# NEED TP BE FIXED ! NEED TO SHOW TABLE CATEGORIES'S NOM !!!! #}
+                <p class="card-text">{# categories.nom  #}</p>
                 <a href="{{ path('main_detail', {'id' : serie.id } ) }}" class="btn btn-primary">En savoir plus</a>
             </div>
         </div>

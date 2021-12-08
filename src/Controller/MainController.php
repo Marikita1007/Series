@@ -2,10 +2,14 @@
 
 namespace App\Controller;
 
+use App\Entity\Categories;
+use App\Repository\CategoriesRepository;
 use App\Repository\SeriesRepository;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Vich\UploaderBundle\Adapter\ORM\DoctrineORMAdapter;
 
 class MainController extends AbstractController
 {
@@ -28,7 +32,7 @@ class MainController extends AbstractController
     {
         $serie = $repository->find($id);
 
-        return $this->render('main/detail.html.twig', [
+       return $this->render('main/detail.html.twig', [
             'serie' => $serie,
         ]);
     }

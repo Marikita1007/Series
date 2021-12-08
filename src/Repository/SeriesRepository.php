@@ -22,19 +22,17 @@ class SeriesRepository extends ServiceEntityRepository
     // /**
     //  * @return Series[] Returns an array of Series objects
     //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('s.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+    //public function findById($value)
+//    {
+//        return $this->createQueryBuilder('series')
+//            ->andWhere('series.id = :val')
+//            ->setParameter('val', $value)
+//            ->innerJoin('series.categories_id', 'categories.id')
+//            ->getQuery()
+//            ->getResult()
+//        ;
+//    }
+
 
     /*
     public function findOneBySomeField($value): ?Series
